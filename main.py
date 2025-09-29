@@ -1,5 +1,7 @@
 import requests
 
+from api import *
+
 URL_BASE = "https://learningserver.masterschool.com"
 
 def send_get(url: str, params: dict[str, str]) -> str:
@@ -22,12 +24,16 @@ def main() -> None:
     # task1 = send_get("/http-basics/get-me", task1_params)
     # print(task1)
 
-    task2_data = {
-        "username": get_user_input("Enter Username:"),
-        "password": get_user_input("Enter Password:")
-    }
-    task2 = send_post("/http-basics/post-me", task2_data)
-    print(task2)
+    # task2_data = {
+    #     "username": get_user_input("Enter Username:"),
+    #     "password": get_user_input("Enter Password:")
+    # }
+    # task2 = send_post("/http-basics/post-me", task2_data)
+    # print(task2)
+
+    meal_name = get_user_input("Enter meal name:")
+    meal_info = get_meal(meal_name)
+    print(meal_info)
 
 if __name__ == '__main__':
     main()
