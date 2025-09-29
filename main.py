@@ -1,15 +1,4 @@
-import requests
-
 from api import *
-
-URL_BASE = "https://learningserver.masterschool.com"
-
-def send_get(url: str, params: dict[str, str]) -> str:
-    return requests.get(URL_BASE+url, params).text
-
-
-def send_post(url: str, data: dict[str, str]) -> str:
-    return requests.post(URL_BASE+url, data).text
 
 
 def get_user_input(prompt: str) -> str:
@@ -17,19 +6,13 @@ def get_user_input(prompt: str) -> str:
 
 
 def main() -> None:
-    # task1_params = {
-    #     "name": get_user_input("Enter name:"),
-    #     "color": get_user_input("Enter color:")
-    # }
-    # task1 = send_get("/http-basics/get-me", task1_params)
-    # print(task1)
+    # name = get_user_input("Enter name:")
+    # color = get_user_input("Enter color:")
+    # print(task1(name, color))
 
-    # task2_data = {
-    #     "username": get_user_input("Enter Username:"),
-    #     "password": get_user_input("Enter Password:")
-    # }
-    # task2 = send_post("/http-basics/post-me", task2_data)
-    # print(task2)
+    # username = get_user_input("Enter Username:")
+    # password = get_user_input("Enter Password:")
+    # print(task2(username, password))
 
     meal_name = get_user_input("Enter meal name:")
     meal_info = get_meal(meal_name)
