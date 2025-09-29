@@ -15,8 +15,18 @@ def main() -> None:
     # print(task2(username, password))
 
     meal_name = get_user_input("Enter meal name:")
-    meal_info = get_meal(meal_name)
-    print(meal_info)
+    meals = get_meals(meal_name)
+    meals_len = len(meals)
+    print(f"We found {meals_len} meal(s):\n")
+
+    for meal_info in meals:
+        print(
+            f" {meal_info["strMeal"]} ".center(40, "*"),
+            f"\nCategory: {meal_info["strCategory"]}"
+            f"\nArea: {meal_info["strArea"]}"
+            f"\nInstructions:"
+            f"\n{meal_info["strInstructions"]}"
+        )
 
 if __name__ == '__main__':
     main()
