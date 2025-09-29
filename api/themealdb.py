@@ -3,7 +3,8 @@ from typing import Any
 
 API_BASE = "https://www.themealdb.com/api/json/v1/1"
 
-def get_meals(meal_name: str) -> dict[str, Any]:
-    return requests.get(f"{API_BASE}/search.php", {
+def get_meals(meal_name: str) -> tuple[dict[str, Any], int]:
+    res = requests.get(f"{API_BASE}/search.php", {
         "s": meal_name
     }).json()['meals']
+    return res, len(res)
